@@ -9,5 +9,4 @@ env/
 outputs/
 eval_outputs/
 plots/output/
-all_project_files.txt
-generative_search/all_python_files.txt
+
