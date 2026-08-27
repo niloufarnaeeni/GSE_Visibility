@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # GSE Visibility
 
 Code for **Who Gets Seen? Creator Visibility from Ranking to Generation**.
@@ -149,6 +148,3 @@ Scripts for reproducing the experimental figures are available under:
 ```text
 rag_retrieval/plots/
 ```
-=======
-# GSE_Visibility
->>>>>>> 30d1e31c04c6335494b75bd0e6e70149068d94e6
