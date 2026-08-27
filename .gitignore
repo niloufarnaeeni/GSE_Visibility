@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+outputs/
+eval_outputs/
+plots/output/
+all_project_files.txt
+generative_search/all_python_files.txt

@@ -1,0 +1,84 @@
+# ======================
+# Model
+# ======================
+model_name_or_path: "Qwen/Qwen2.5-0.5B-Instruct"  # "Qwen/Qwen2.5-1.5B"
+model_type: "llm_decoder"
+num_labels: 1
+query_format: "query: {}"
+document_format: "document: {}"
+seq: "\n"
+special_token: "\nrelevance"
+
+# ======================
+# Grouped Dataset
+# ======================
+train_dataset: "data/kaito/processed/train.jsonl"
+train_dataset_type: "grouped"
+train_label_key: "label"
+template_name: "v2"
+
+# Giverep 4
+# Kaito 16
+# cookie_fun 8
+train_group_size: 8
+
+shuffle_rate: 0.0
+max_len: 256 #512
+
+val_dataset: "data/kaito/processed/valid.jsonl"
+val_dataset_type: "grouped"
+val_label_key: "label"
+disable_validation: true
+
+test_dataset: "data/kaito/processed/test.jsonl"
+skill_set_version: "rootdata"
+
+# ======================
+# Ranking objective settings: ranknet, ear, ear_sym, pairwise_reg
+# ======================
+loss_type: "ear"  # ranknet, ear, ear_sym, pairwise_reg
+lambda_corr: 0.05
+lambda_prior_attention: 0.0
+
+# ======================
+# Training
+# ======================
+output_dir: "./output/kaito"
+
+# ======================
+# Model Saving
+# ======================
+save_on_epoch_end: 1
+num_max_checkpoints: 1
+save_every_n_batches: 0
+
+# ======================
+# Hyperparameters
+# ======================
+epochs: 3
+lr: 2e-5
+batch_size: 8
+seed: 42
+warmup_proportion: 0.03
+stable_proportion: 0.0
+gradient_accumulation_steps: 4
+mixed_precision: "bf16"  # "fp16"
+
+# ======================
+# PEFT / Quantization
+# ======================
+peft_method: "none"  # alternatives: "lora", "qlora"
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target_modules: "q_proj,k_proj,v_proj,o_proj"
+gradient_checkpointing: false
+qlora_compute_dtype: "bfloat16"
+qlora_quant_type: "nf4"
+qlora_use_double_quant: true
+
+# ======================
+# Logging
+# ======================
+log_interval: 10
+log_with: "tensorboard"

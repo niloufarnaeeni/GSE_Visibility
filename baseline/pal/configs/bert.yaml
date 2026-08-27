@@ -1,0 +1,3 @@
+method: pal
+alpha: 1.0
+normalization: log1p_minmax

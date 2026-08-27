@@ -1,0 +1,30 @@
+# Core ML
+torch
+transformers
+accelerate
+peft
+safetensors
+bitsandbytes
+
+# Retrieval
+sentence-transformers
+FlagEmbedding
+
+# Evaluation and analysis
+numpy
+pandas
+scipy
+statsmodels
+pytrec-eval
+pydantic
+psutil
+tqdm
+PyYAML
+
+# Plotting
+matplotlib
+seaborn
+openpyxl
+
+# Experiment logging
+tensorboard

@@ -1,0 +1,3 @@
+method: pbiloss_popneg_ft
+lambda: 0.005
+popular_fraction: 0.20
